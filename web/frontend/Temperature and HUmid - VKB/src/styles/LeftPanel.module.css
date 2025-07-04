@@ -1,0 +1,14 @@
+.leftPanel {
+  width: 50%;
+  height: 90vh;
+  background: #fff;
+  padding: 0rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 0px solid rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.leftPanel:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}

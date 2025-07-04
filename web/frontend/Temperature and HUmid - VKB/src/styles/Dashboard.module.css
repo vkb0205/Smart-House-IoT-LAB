@@ -1,0 +1,15 @@
+.dashboardContainer {
+  min-height: 100vh;
+  background: #f3f4f6;
+  padding-bottom: 6rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.rightPanelTop, .rightPanelBottom {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
