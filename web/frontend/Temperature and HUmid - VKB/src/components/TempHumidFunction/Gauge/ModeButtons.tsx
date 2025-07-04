@@ -5,11 +5,18 @@ import styles from "../../../styles/ModeButtons.module.css";
 const ModeButtons = () => {
   return (
     <div className={styles.modeButtonsContainer}>
-      {[<FaSnowflake />, <FaFire />, <FaSmile />, <FaUser />].map((Icon, i) => (
-        <button key={i} className={styles.modeButton}>
-          {Icon}
-        </button>
-      ))}
+      <button className={styles.modeButton} title="Cool">
+        <FaSnowflake />
+      </button>
+      <button className={styles.modeButton} title="Heat">
+        <FaFire />
+      </button>
+      <button className={styles.modeButton} title="Auto">
+        <FaSmile />
+      </button>
+      <button className={styles.modeButton} title="Manual">
+        <FaUser />
+      </button>
     </div>
   );
 };

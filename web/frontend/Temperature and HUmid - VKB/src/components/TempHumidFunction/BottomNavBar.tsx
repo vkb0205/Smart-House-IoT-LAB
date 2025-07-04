@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import styles from "../../styles/BottomNavBar.module.css";
 
 const BottomNavBar = () => {
+  const [activeTab, setActiveTab] = useState("Home");
+
+  const navItems = [
+    { name: "Home", icon: "🏠" },
+    { name: "Libraries", icon: "📚" },
+    { name: "AI Assistant", icon: "🤖" },
+  ];
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white shadow-inner flex justify-around py-2 text-sm">
-      <button className="text-blue-600 font-semibold">Home</button>
-      <button>Libraries</button>
-      <button>AI Assistant</button>
+    <div className={styles.bottomNavBar}>
+      {navItems.map((item) => (
+        <button
+          key={item.name}
+          className={`${styles.navButton} ${
+            activeTab === item.name ? styles.active : ""
+          }`}
+          onClick={() => setActiveTab(item.name)}
+        >
+          <span style={{ marginRight: "6px" }}>{item.icon}</span>
+          {item.name}
+        </button>
+      ))}
     </div>
   );
 };

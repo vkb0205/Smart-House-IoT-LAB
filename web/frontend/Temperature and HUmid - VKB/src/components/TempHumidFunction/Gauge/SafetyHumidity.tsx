@@ -1,5 +1,5 @@
 import React from "react";
-
+import styles from "../../../styles/SafetyHumidity.module.css";
 interface Props {
   safety: number;
   humidity: number;
@@ -7,12 +7,12 @@ interface Props {
 
 const SafetyHumidity: React.FC<Props> = ({ safety, humidity }) => {
   return (
-    <div className="grid grid-cols-2 gap-4 mt-4">
-      <div className="bg-gray-100 rounded-xl p-4 text-center">
+    <div className={styles.safetyContainer}>
+      <div className={styles.boxStat}>
         <p className="text-sm text-gray-600">Safety Score</p>
         <h2 className="text-2xl font-bold">{safety}/100</h2>
       </div>
-      <div className="bg-gray-100 rounded-xl p-4 text-center">
+      <div className={styles.boxStat}>
         <p className="text-sm text-gray-600">Humidity</p>
         <h2 className="text-2xl font-bold">{humidity}%</h2>
       </div>

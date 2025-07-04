@@ -4,6 +4,7 @@ import SafetyHumidity from "./Gauge/SafetyHumidity";
 import WeeklyChart from "./Gauge/WeeklyChart";
 import DeviceSwitchGrid from "./Gauge/DeviceSwitchGrid";
 import BottomNavBar from "./BottomNavBar";
+import RightPanel from "./RightPanel";
 
 //styles
 import styles from "../../styles/Dashboard.module.css";
@@ -34,21 +35,20 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className={styles.dashboardContainer}>
-      <div className="flex flex-col lg:flex-row gap-6">
+      <div className={`${styles.mainContent} flex flex-col lg:flex-row gap-6`}>
         {/* Left Panel: Temperature and Modes */}
         <LeftPanel
           temperature={temperature}
           desiredTemp={desiredTemp}
           onTempChange={setDesiredTemp}
         />
-        {/*
-        <!--Right Panel-->
-        <div className="flex-1 flex flex-col gap-4">
-          <WeeklyChart />
-          <SafetyHumidity safety={safety} humidity={humidity} />
-          <DeviceSwitchGrid devices={devices} onToggle={toggleDevice} />
-        </div>
-        */}
+
+        <RightPanel
+          safety={safety}
+          humidity={humidity}
+          devices={devices}
+          onToggle={toggleDevice}
+        />
       </div>
 
       <BottomNavBar />

@@ -1,5 +1,13 @@
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import styles from "../../../styles/WeeklyChart.module.css";
 
 const data = [
   { day: "Mon", temp: 90 },
@@ -12,14 +20,20 @@ const data = [
 ];
 
 const WeeklyChart = () => (
-  <div className="bg-white rounded-xl p-4 shadow-md">
-    <h3 className="text-md font-semibold mb-2">Weekly Average Temperature</h3>
-    <BarChart width={300} height={150} data={data}>
-      <XAxis dataKey="day" />
-      <YAxis />
-      <Tooltip />
-      <Bar dataKey="temp" fill="#4ade80" />
-    </BarChart>
+  <div className={styles.chartContainer}>
+    <h3 className="text-md font-semibold mb-2 text-center">
+      Weekly Average Temperature
+    </h3>
+    <div className={styles.chartWrapper}>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={data}>
+          <XAxis dataKey="day" />
+          <YAxis />
+          <Tooltip />
+          <Bar dataKey="temp" fill="#4ade80" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   </div>
 );
 
